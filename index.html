@@ -22,18 +22,14 @@
 <body>
     <div class="div1">
         <h1>杨子萱</h1>
-        <button>点解变大</button>
+        
     </div>
     <script>
         //获取标签
         let h=document.querySelector('h1');
-        let btn = document.querySelector('button');
+        
         li = 2;
-        btn.onclick = function(){
-            ++li;
-            h.style.fontSize =li+'em';
-            console.log(h.style.fontSize);
-        }
+        
         setInterval(function(){
             if(li < 8){
                 ++li;
