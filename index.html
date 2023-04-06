@@ -1,53 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0px;
             padding: 0px;
         }
-        .div1{
+
+        .div1 {
             width: 500px;
             height: 500px;
             margin: 200px auto;
             text-align: center;
         }
-
     </style>
 </head>
+
 <body>
     <div class="div1">
-        <h1>杨子萱</h1>
-        
+        <h1 id="myHeading">杨丽莎</h1>
+
     </div>
     <script>
-        //获取标签
-        let h=document.querySelector('h1');
-        
-        li = 2;
-        
-        setInterval(function(){
-            if(li < 8){
-                ++li;
-                h.style.fontSize =li+'em';
-                console.log(h.style.fontSize);
-            }else{
-                --li;
-                h.style.fontSize =li+'em';
-                console.log(h.style.fontSize);
-            }
-            
+        const myHeading = document.getElementById("myHeading");
+        let fontSize = 0;
+        let isGrowing = true;
 
-        },500)
-        
-        
+        // 定时器
+        setInterval(() => {
+            if (isGrowing) {
+                fontSize += 1;
+                if (fontSize === 10) {
+                    isGrowing = false;
+                }
+            } else {
+                fontSize -= 1;
+                if (fontSize === 0) {
+                    isGrowing = true;
+                }
+            }
+            myHeading.style.fontSize = `${fontSize}em`;
+        }, 1000);
+
+
+
 
 
     </script>
 
 </body>
+
 </html>
