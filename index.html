@@ -1,1 +1,57 @@
-你好，蒋绵绵
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .div1{
+            width: 500px;
+            height: 500px;
+            margin: 200px auto;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h1>杨子萱</h1>
+        <button>点解变大</button>
+    </div>
+    <script>
+        //获取标签
+        let h=document.querySelector('h1');
+        let btn = document.querySelector('button');
+        li = 2;
+        btn.onclick = function(){
+            ++li;
+            h.style.fontSize =li+'em';
+            console.log(h.style.fontSize);
+        }
+        setInterval(function(){
+            if(li < 8){
+                ++li;
+                h.style.fontSize =li+'em';
+                console.log(h.style.fontSize);
+            }else{
+                --li;
+                h.style.fontSize =li+'em';
+                console.log(h.style.fontSize);
+            }
+            
+
+        },500)
+        
+        
+
+
+    </script>
+
+</body>
+</html>
