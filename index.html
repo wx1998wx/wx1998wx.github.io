@@ -17,13 +17,14 @@
             pointer-events: none;
         }
         span:before{
-            content: "❤";
-            width: 52px;
-            height: 52px;
+            content: "❤澜";
+            width: 45px;
+            height: 45px;
+            font-size: 45px;
             position: absolute;
             color: red;
             /* 加点偏移 */
-            animation: path 1s linear infinite;
+            animation: path 10s linear infinite;
             /* background: url(./heart.png); */
         }
         @keyframes path{
@@ -57,7 +58,7 @@
             body.appendChild(heart);
             setTimeout(function(){
                 body.removeChild(heart);
-            },5000)
+            },3000)
 
 
         })
