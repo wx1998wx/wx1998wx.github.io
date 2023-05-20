@@ -1,50 +1,68 @@
 <!DOCTYPE html>
-<html lang="en-us">
-   <head>
-      <meta charset="utf-8" />
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <title>VirtualExhibition2022</title>
-      <meta name="viewport" content="width=device-width, height=device-height,  initial-scale=1.0, user-scalable=no;user-scalable=0;"/>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: #000;
+            overflow: hidden;
+        }
+        span{
+            color: #fff;
+            position: absolute;
+            pointer-events: none;
+        }
+        span:before{
+            content: "❤";
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            color: red;
+            /* 加点偏移 */
+            animation: path 1s linear infinite;
+            /* background: url(./heart.png); */
+        }
+        @keyframes path{
+            0%{
+                transform: translate(0) rotate(0deg);
+            }
+            100%{
+                transform: translate(100px) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        
+            document.addEventListener("mousemove",function(e){
 
-
-      <link rel="stylesheet" href="Template/style.css" />
-      
-   </head>
-   <body class="Dark">
-      <!-- Ambiens VR Multiplatform WebGL Template v 1.3-->
-      <!-- Unity Container -->
-      <div id="main-container" class="fill-window">
-
-         <div id="unity-container">
-            <canvas id="unity-canvas"></canvas>
-            <div id="toggle_fullscreen" class="button floatbottomLeft fullscreenON" > <span class="imgbutton"></span> </div>
-         </div>
-
-         <!-- This is a simple progress bar -->
-         <div id="loader" class="loader">
-            <div class="container">
-               <div class="center">
-                  <img src="Template/logo.png" class="logo" />
-               </div>
-   
-               <div class="center">   
-                  <div class="progressbar">
-                     <div id="fill" class="fill" style="width: 0%;"></div>
-                  </div>
-               </div>
-            </div>
+            //获取body元素
+            let body = document.querySelector("body");
+            //新建span元素
+            let heart = document.createElement("span");
             
-            
-            <div class="footer-cont">
-               <p>同济大学设计创意学院 2022毕展虚拟展馆</p>
-               <p>2022 Virtual Graduation Exhibtion of D&I, Tongji University</p>
-            </div>
+            //实时获取鼠标移动的坐标
+            let x = e.offsetX;
+            let y = e.offsetY;
+            //实时更新heart标签位置
+            heart.style.left = x + "px";
+            heart.style.top = y + "px";
+            heart.style.transform = `rotate(${Math.random()*360}deg)`
+            //将heart标签添加到body中
+            body.appendChild(heart);
+            setTimeout(function(){
+                body.removeChild(heart);
+            },1000)
 
-         </div>
-         
-      </div>
 
-      <script src="Template/app.js"> </script>
-
-   </body>
+        })
+        
+        
+    </script>
+</body>
 </html>
