@@ -38,32 +38,9 @@
     </style>
 </head>
 <body>
-    <script>
-        
-            document.addEventListener("mousemove",function(e){
-
-            //获取body元素
-            let body = document.querySelector("body");
-            //新建span元素
-            let heart = document.createElement("span");
-            
-            //实时获取鼠标移动的坐标
-            let x = e.offsetX;
-            let y = e.offsetY;
-            //实时更新heart标签位置
-            heart.style.left = x + "px";
-            heart.style.top = y + "px";
-            heart.style.transform = `rotate(${Math.random()*360}deg)`
-            //将heart标签添加到body中
-            body.appendChild(heart);
-            setTimeout(function(){
-                body.removeChild(heart);
-            },3000)
-
-
-        })
+    
         
         
-    </script>
+    你好你好
 </body>
 </html>
